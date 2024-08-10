@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       reset_session
-      # log_in @user
-      flash[:success] = "地獄のアプリへようこそ！！"
+      log_in @user
+      flash[:success] = '転職アプリへようこそ！！'
       redirect_to @user
     else
       render 'new', status: :unprocessable_entity
